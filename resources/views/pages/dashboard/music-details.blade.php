@@ -26,17 +26,17 @@
         }
 
         $composer_name = '';
-        if(count($composer) > 0) {
+        if(isset($composer) && count($composer) > 0) {
             $composer_name = $composer[0]->first_name.' '.$composer[0]->last_name;
         }
 
         $lyricist_name = '';
-        if(count($lyricist) > 0) {
+        if(isset($lyricist) && count($lyricist) > 0) {
             $lyricist_name = $lyricist[0]->first_name.' '.$lyricist[0]->last_name;
         }
 
         $director_name = '';
-        if(count($director) > 0) {
+        if(isset($director) && count($director) > 0) {
             $director_name = $director[0]->first_name.' '.$director[0]->last_name;
         }
         
@@ -51,8 +51,8 @@
                 <div class="row"
                 data-song-id="<?php echo $music[0]->id?>"
                 data-song-name="<?php echo $music[0]->name?>"
-                data-song-artist="<?php echo $artist[0]->first_name.' '.$artist[0]->last_name?>"
-                data-song-album="<?php echo $album[0]->name?>"
+                data-song-artist="<?php echo (isset($artist) && count($artist) >0) ? $artist[0]->first_name.' '.$artist[0]->last_name : ''?>"
+                data-song-album="<?php echo (isset($album) && count($album) >0) ? $album[0]->name : ''?>"
                 data-song-url="<?php echo $music_file?>"
                 data-song-cover="<?php echo $music_cover?>">
                     <div class="col-xl-3 col-md-4">
@@ -83,7 +83,7 @@
                         </div>
                         <!-- Start:: info list [[ Find at scss/components/list.scss ]] -->
                         <ul class="info-list info-list--dotted mb-3">
-                            <li><?php echo $genre[0]->name?></li>
+                            <li><?php echo (isset($genre) && count($genre) >0) ? $genre[0]->name : ''?></li>
                             <li><?php echo $music_duration?></li>
                         </ul>
                         <!-- End:: info list -->

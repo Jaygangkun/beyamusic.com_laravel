@@ -312,9 +312,9 @@ var Base = function () {
     return {
         init: function() {
             loader();
-            initSettings();
+            // initSettings();
             reInit();
-            routing();
+            // routing();
         }
     }
 

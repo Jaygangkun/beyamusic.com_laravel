@@ -17,3 +17,4 @@ use App\Http\Controllers\AjaxController;
 
 Route::post('/add-music', [AjaxController::class, 'add_music']);
 Route::post('/add-album', [AjaxController::class, 'add_album']);
+Route::post('/search', [AjaxController::class, 'search']);

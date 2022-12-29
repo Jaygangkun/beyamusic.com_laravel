@@ -166,4 +166,18 @@ class AjaxController extends BaseController
 
         return $resp;
     }
+
+    public function search() {
+        $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
+
+        $data = array(
+            'genres' => Genre::where('name', 'like', '%'.$keyword.'%')->get(),
+            'artists' => Artist::where('first_name', 'like', '%'.$keyword.'%')->orwhere('last_name', 'like', '%'.$keyword.'%')->get(),
+            'musics' => Music::where('name', 'like', '%'.$keyword.'%')->get(),
+        );
+
+        return view('ajax.search-result', $data);
+
+        // return $genres;
+    }
 }

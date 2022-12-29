@@ -41,7 +41,7 @@ class DashboardController extends BaseController
             'genre' => Genre::where('id', $genre_id)->get(),
             'genre_musics' => DB::table('musics')
                 ->where('genre_id', $genre_id)
-                ->join('artists', 'musics.artist_id', '=', 'artists.id')
+                ->leftJoin('artists', 'musics.artist_id', '=', 'artists.id')
                 ->select('musics.*', 'artists.*')->get()
         );
 
@@ -53,8 +53,8 @@ class DashboardController extends BaseController
         $data = array(
             // 'free_musics' => Music::where('price', 'free')->get(),
             'free_musics' => DB::table('musics')
-                ->join('artists', 'musics.artist_id', '=', 'artists.id')
-                ->join('albums', 'musics.album_id', '=', 'albums.id')
+                ->leftJoin('artists', 'musics.artist_id', '=', 'artists.id')
+                ->leftJoin('albums', 'musics.album_id', '=', 'albums.id')
                 ->select('musics.*', 'artists.first_name as artist_first_name', 'artists.last_name as artist_last_name', 'albums.name as album_name')->get()
         );
 

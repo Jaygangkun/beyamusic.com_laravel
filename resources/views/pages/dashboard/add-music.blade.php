@@ -62,7 +62,7 @@
                                             </div>
                                             <div class="col-12 mb-4">
                                                 <label for="music_file" class="form-label">Music file</label>
-                                                <input type="file" id="music_file" name="music_file" class="form-control">
+                                                <input type="file" id="music_file" name="music_file" class="form-control" accept=".mp3, .wav">
                                             </div>
                                             <div class="col-sm-6 mb-4">
                                                 <input type="text" class="form-control" name="music_artist" placeholder="Artist">

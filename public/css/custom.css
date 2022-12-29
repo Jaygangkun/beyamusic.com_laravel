@@ -19,3 +19,27 @@
 .btn-upload-img-close * {
     cursor: pointer !important;
 }
+
+#search_results_loading .loader {
+    display: none;
+}
+
+#search_results_loading {
+    padding: 30px;
+}
+
+.loading #search_results_loading .loader {
+    display: block;
+}
+
+#search_results_loading .loader__text {
+    text-align: center;
+}
+
+.loading #search_results_body {
+    display: none;
+}
+
+.search {
+    overflow: auto;
+}

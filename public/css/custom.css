@@ -1,0 +1,21 @@
+.dropzone {
+    min-height: initial;
+}
+
+.upload-img-template-wrap {
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.btn-upload-img-close {
+    color: #E72412;
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    cursor: pointer !important;
+}
+
+.btn-upload-img-close * {
+    cursor: pointer !important;
+}

@@ -71,7 +71,7 @@ if(isset($musics) && count($musics) > 0) {
                 <div class="col-xl-3 col-md-4 col-sm-6">
                     <div class="list__item">
                         <a href="{{url('music/'.$music->id)}}" class="list__cover">
-                            <img src="<?php echo $artist_img?>" alt="<?php echo $music_name?>">
+                            <img src="<?php echo $music_cover?>" alt="<?php echo $music_name?>">
                         </a>
                         <div class="list__content">
                             <a href="{{url('music/'.$music->id)}}" class="list__title text-truncate"><?php echo $music_name?></a>
